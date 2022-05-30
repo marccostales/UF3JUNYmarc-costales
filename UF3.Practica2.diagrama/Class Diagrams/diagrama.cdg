@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="diagrama">
+  <ClassDiagramComponents>
+    <Class name="Copia" package="" visibility="public" xPosition="561.0" yPosition="196.0">
+      <Fields>
+        <Field name="idLlibre" type="String" visibility="private"/>
+        <Field name="localitzacio" type="LocalitzacioCopia" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Lector" package="" visibility="public" xPosition="526.0" yPosition="454.0">
+      <Fields>
+        <Field name="nom" type="String" visibility="private"/>
+        <Field name="DNI" type="String" visibility="private"/>
+        <Field name="idPrestec" type="List" visibility="private"/>
+        <Field name="NUMMAXIMPRESTEC" type="int" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="maximLlibres" returnType="void" visibility="public">
+          <Argument type="String" name="idPrestec"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Llibres" package="" visibility="public" xPosition="314.0" yPosition="196.0">
+      <Fields>
+        <Field name="nom" type="String" visibility="private"/>
+        <Field name="tipusLlibre" type="List" visibility="private"/>
+        <Field name="editorial" type="String" visibility="private"/>
+        <Field name="any" type="int" visibility="private"/>
+        <Field name="autors" type="List" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Enum name="LocalitzacioCopia" package="" visibility="public" xPosition="841.0" yPosition="169.0">
+      <Literals>
+        <Literal name="BIBLIOTECA"/>
+        <Literal name="PRESTADA"/>
+        <Literal name=" RETARDADA"/>
+        <Literal name="REPARACIO"/>
+      </Literals>
+    </Enum>
+    <Class name="Prestac" package="" visibility="public" xPosition="808.0" yPosition="385.0">
+      <Fields>
+        <Field name="fechaInicio" type="int" visibility="private"/>
+        <Field name="fechaFinal" type="int" visibility="private"/>
+        <Field name="idPrestec" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="autors" package="" visibility="public" xPosition="314.0" yPosition="454.0">
+      <Fields>
+        <Field name="nom" type="String" visibility="private"/>
+        <Field name="nacionalitat" type="String" visibility="private"/>
+        <Field name="dataNaixement" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="biblioteca" package="" visibility="public" isAbstract="true" xPosition="579.0" yPosition="33.0">
+      <Fields>
+        <Field name="llibres" type="ArrayList" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Enum name="tipusLlibre" package="" visibility="public" xPosition="54.0" yPosition="211.0">
+      <Literals>
+        <Literal name="ENGINYERIA"/>
+        <Literal name="LITERATURA"/>
+        <Literal name="INFORMATICA"/>
+        <Literal name="HISTORIA"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="ha agafat" source="Lector" target="Prestac" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="te" source="autors" target="Llibres" type="Aggregation" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <HasRelation name="esta" source="Copia" target="LocalitzacioCopia" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="te" source="biblioteca" target="Copia" type="Composition" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="es de" source="Llibres" target="tipusLlibre" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Copia" target="Llibres"/>
+    <HasRelation name="te" source="Prestac" target="Copia" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
