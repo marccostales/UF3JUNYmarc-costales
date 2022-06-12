@@ -1,5 +1,6 @@
 public class aules {
 
+    
     private String nom;
 
     private int capacitatMaximaAlumnes;

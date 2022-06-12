@@ -1,5 +1,6 @@
 public class professors {
 
+    
     private String nom;
 
     private String cognoms;
