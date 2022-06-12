@@ -1,5 +1,6 @@
 public class alumnes {
 
+    
     private String nom;
 
     private String cognoms;
