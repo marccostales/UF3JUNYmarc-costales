@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="UF3JUNYMarc-Costales">
+  <ClassDiagramComponents>
+    <Class name="alumnes" package="" visibility="public" xPosition="59.0" yPosition="341.0">
+      <Fields>
+        <Field name="nom" type="String" visibility="private"/>
+        <Field name="cognoms" type="String" visibility="private"/>
+        <Field name="email" type="String" visibility="private"/>
+        <Field name="data_naixement" type="Date" visibility="private"/>
+        <Field name="codiCicle" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="professors" package="" visibility="public" xPosition="313.0" yPosition="341.0">
+      <Fields>
+        <Field name="nom" type="String" visibility="private"/>
+        <Field name="cognoms" type="String" visibility="private"/>
+        <Field name="email" type="String" visibility="private"/>
+        <Field name="departament" type="String" visibility="private"/>
+        <Field name="carrec" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="institut" package="" visibility="public" xPosition="189.0" yPosition="-15.0">
+      <Fields>
+        <Field name="aules" type="ArrayList" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="aules" package="" visibility="public" xPosition="173.0" yPosition="161.0">
+      <Fields>
+        <Field name="nom" type="String" visibility="private"/>
+        <Field name="capacitatMaximaAlumnes" type="int" visibility="private"/>
+        <Field name="quantitatOrdinadors" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Enum name="carrec" package="" visibility="public" xPosition="313.0" yPosition="577.0">
+      <Literals>
+        <Literal name="TUTOR"/>
+        <Literal name="TUTOR FCT"/>
+        <Literal name="PROFESSOR"/>
+      </Literals>
+    </Enum>
+    <Enum name="departament" package="" visibility="public" xPosition="552.0" yPosition="341.0">
+      <Literals>
+        <Literal name="INFORMATICA"/>
+        <Literal name="ANGLES"/>
+        <Literal name="FOL"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="pertany" source="professors" target="departament" type="Default" sourceCardinality="0..1" targetCardinality="1..1" collectionType="List"/>
+    <HasRelation name="pertany" source="professors" target="carrec" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="institut" target="aules"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
